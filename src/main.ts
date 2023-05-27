@@ -4,14 +4,13 @@ import { createPinia } from 'pinia';
 import ElementPlus from 'element-plus';
 import App from './App.vue';
 import AppComponents from './components';
-
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
 import './index.css';
 import router from './router';
+
 // create new app instance
 const createNewApp = () => {
   const app = createApp({

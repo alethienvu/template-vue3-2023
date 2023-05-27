@@ -21,6 +21,8 @@ export default defineComponent({
 
   setup() {
     const router = useRoute();
+    // if requiresAuth === true => signed in => use default layout
+    // else use auth layout
     const isAuthLayout = computed(() => !router.meta?.requiresAuth);
     const initialize = () => {
       return Promise.resolve();

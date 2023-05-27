@@ -1,22 +1,22 @@
 import { useDashboardStore } from 'modules/dashboard/store';
 import { useAuthStore } from 'modules/auth/store';
-import { defineStore } from 'pinia'
+import { defineStore } from 'pinia';
 
 export const globalStore = defineStore('global', {
   state: () => ({
-    loading: false,
+    loading: false
   }),
   actions: {
     async actLoading(status: boolean) {
-      this.loading = status
-    },
-  },
-})
+      this.loading = status;
+    }
+  }
+});
 
-const useStore : any = () => ({
+const useStore: any = () => ({
   dashboard: useDashboardStore(),
   auth: useAuthStore(),
-  global: globalStore(),
+  global: globalStore()
 });
 
 export default useStore;

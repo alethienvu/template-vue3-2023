@@ -27,24 +27,24 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import useStore from 'store'
-import SplitBackground from './components/SplitBackground.vue'
-import FortgotPasswordForm from './components/ForgotPasswordForm.vue'
-import WelcomeLabel from './components/WelcomeLabel.vue'
+import { defineComponent, computed } from 'vue';
+import useStore from 'store';
+import SplitBackground from './components/SplitBackground.vue';
+import FortgotPasswordForm from './components/ForgotPasswordForm.vue';
+import WelcomeLabel from './components/WelcomeLabel.vue';
 
 export default defineComponent({
   components: {
     SplitBackground,
     FortgotPasswordForm,
-    WelcomeLabel,
+    WelcomeLabel
   },
   setup() {
-    const store = useStore()
-    const isAuthenticated = computed<boolean>(() => store.auth.getAuthenticationState)
+    const store = useStore();
+    const isAuthenticated = computed<boolean>(() => store.auth.getAuthenticationState);
     return {
-      isAuthenticated,
-    }
-  },
-})
+      isAuthenticated
+    };
+  }
+});
 </script>

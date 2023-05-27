@@ -11,19 +11,6 @@
             <div class="md:flex-9 md:max-w-9/12 lg:flex-8 lg:max-w-2/3">
               <WelcomeLabel />
             </div>
-            <div class="md:flex-6 md:max-w-1/2 lg:flex-5 lg:max-w-5/12">
-              <h3 class="text-white mt-12 mb-0">
-                <span class="font-bold">You can log in with 3 user types:</span>
-              </h3>
-              <ul class="text-light mt-4 mb-0 pl-0 lg:pl-7.5">
-                <li v-for="(account, index) in accounts" :key="index" class="flex">
-                  <div class="px-2">{{ index }}.</div>
-                  <div class="w-full">
-                    Username <strong>{{ account }}</strong> Password <strong>secret</strong>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
@@ -55,26 +42,26 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import useStore from 'store'
-import SplitBackground from './components/SplitBackground.vue'
-import LoginForm from './components/LoginForm.vue'
-import WelcomeLabel from './components/WelcomeLabel.vue'
+import { defineComponent, computed } from 'vue';
+import useStore from 'store';
+import SplitBackground from './components/SplitBackground.vue';
+import LoginForm from './components/LoginForm.vue';
+import WelcomeLabel from './components/WelcomeLabel.vue';
 
 export default defineComponent({
   components: {
     SplitBackground,
     LoginForm,
-    WelcomeLabel,
+    WelcomeLabel
   },
   setup() {
-    const store = useStore()
-    const isAuthenticated = computed<boolean>(() => store.auth.getAuthenticationState)
-    const accounts: string[] = ['admin@argon.com', 'creator@argon.com', 'member@argon.com']
+    const store = useStore();
+    const isAuthenticated = computed<boolean>(() => store.auth.getAuthenticationState);
+    const accounts: string[] = ['admin@argon.com', 'creator@argon.com', 'member@argon.com'];
     return {
       isAuthenticated,
-      accounts,
-    }
-  },
-})
+      accounts
+    };
+  }
+});
 </script>

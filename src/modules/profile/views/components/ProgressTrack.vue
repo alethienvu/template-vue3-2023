@@ -106,28 +106,28 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref } from 'vue';
 
-import reactLogo from '@/assets/images/react.jpg'
-import sketchLogo from '@/assets/images/sketch.jpg'
-import bootstrapLogo from '@/assets/images/bootstrap.jpg'
-import vueLogo from '@/assets/images/vue.jpg'
-import angularLogo from '@/assets/images/angular.jpg'
+import reactLogo from '@/assets/images/react.jpg';
+import sketchLogo from '@/assets/images/sketch.jpg';
+import bootstrapLogo from '@/assets/images/bootstrap.jpg';
+import vueLogo from '@/assets/images/vue.jpg';
+import angularLogo from '@/assets/images/angular.jpg';
 
 export default defineComponent({
   name: 'ProgressTrack',
   setup(_) {
-    const isHover = ref(false)
+    const isHover = ref(false);
     const hoverCheck = (b: boolean) => {
-      isHover.value = b
-    }
+      isHover.value = b;
+    };
 
     const customColors = [
       { color: '#fb6340', percentage: 60 },
       { color: '#f5365c', percentage: 80 },
       { color: '#11cdef', percentage: 85 },
-      { color: '#2dce89', percentage: 100 },
-    ]
+      { color: '#2dce89', percentage: 100 }
+    ];
 
     return {
       customColors,
@@ -137,10 +137,10 @@ export default defineComponent({
       vueLogo,
       angularLogo,
       isHover,
-      hoverCheck,
-    }
-  },
-})
+      hoverCheck
+    };
+  }
+});
 </script>
 
 <style lang="scss" scoped>

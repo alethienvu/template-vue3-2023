@@ -33,23 +33,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { HomeFilled } from '@element-plus/icons-vue'
+import { defineComponent } from 'vue';
+import { HomeFilled } from '@element-plus/icons-vue';
 
 export default defineComponent({
   name: 'BreadCrumb',
   components: {
-    HomeFilled,
+    HomeFilled
   },
   props: {
     parentPath: {
       type: String,
-      default: '/',
+      default: '/'
     },
     title: {
       type: String,
-      default: 'Default',
-    },
-  },
-})
+      default: 'Default'
+    }
+  }
+});
 </script>

@@ -116,19 +116,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { Shop } from '@element-plus/icons-vue'
-import { MenuIcon, XIcon } from '@heroicons/vue/outline'
+import { defineComponent } from 'vue';
+import { MenuIcon, XIcon } from '@heroicons/vue/outline';
 
 export default defineComponent({
   name: 'AuthenticationNav',
   components: {
-    Shop,
     XIcon,
-    MenuIcon,
+    MenuIcon
   },
   setup() {
-    return {}
-  },
-})
+    return {};
+  }
+});
 </script>

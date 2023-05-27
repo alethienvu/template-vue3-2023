@@ -5,7 +5,7 @@
     @mouseleave="hoverLeftBar(false)"
     aria-labelledby="primary-heading"
     class="transition-all duration-300 fixed z-20 bg-white flex-shrink-0 overflow-hidden h-full items-center shadow-card"
-    :class="{ 'hidden-aside !w-17 ': !isSBOpen && !isSBPin , 'w-62.5': isSBOpen || isSBPin}"
+    :class="{ 'hidden-aside !w-17 ': !isSBOpen && !isSBPin, 'w-62.5': isSBOpen || isSBPin }"
   >
     <div class="flex flex-col mx-auto items-stretch h-full">
       <small class="absolute pl-2 left-0 bottom-0 italic text-cyan-800">v{{ version }}</small>
@@ -42,7 +42,7 @@
                 class="relative rounded-lg mx-2"
                 :class="{
                   ' bg-slate-100/50 ': route.name === item.name,
-                  ' arrow-left ': !isSBOpen && !isSBPin,
+                  ' arrow-left ': !isSBOpen && !isSBPin
                 }"
                 :index="`${index}`"
                 v-if="item.children"
@@ -76,7 +76,7 @@
                   <el-menu-item
                     class="relative flex flex-row h-11.25 rounded-lg mb-px mt-0.5"
                     :class="{
-                      ' bg-slate-100/50': route.name === subItem.name,
+                      ' bg-slate-100/50': route.name === subItem.name
                     }"
                     v-for="(subItem, subIndex) in item.children"
                     :key="subIndex"
@@ -91,7 +91,7 @@
                       class="inline-flex ml-2 items-center w-full h-full text-sm my-0.5 font-normal transition-all duration-200 hover:text-gray-500/100 focus:text-gray-800"
                       :class="{
                         ' text-gray-800 ': route.name === subItem.name,
-                        ' ml-4.5 ': isSBOpen || isSBPin,
+                        ' ml-4.5 ': isSBOpen || isSBPin
                       }"
                       :to="{ name: subItem.name }"
                       :title="subItem.meta.title"
@@ -117,7 +117,7 @@
               <el-menu-item
                 class="relative rounded-lg mx-2"
                 :class="{
-                  ' bg-slate-100/50 ': route.name === item.name,
+                  ' bg-slate-100/50 ': route.name === item.name
                 }"
                 :index="`${index}`"
                 v-else
@@ -183,24 +183,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed, onMounted, onUnmounted, onBeforeMount } from 'vue'
-import { useRoute } from 'vue-router'
-import navigation from './SidebarNav'
-import { BellIcon, MenuIcon, MenuAlt1Icon, ColorSwatchIcon } from '@heroicons/vue/outline'
-import useStore from 'store'
-import { onClickOutside } from '@vueuse/core'
-import env from 'core/env'
-import { checkIsMobile } from 'utils/index'
-import { Promotion } from '@element-plus/icons-vue'
+import { defineComponent, ref, computed, onMounted, onUnmounted, onBeforeMount } from 'vue';
+import { useRoute } from 'vue-router';
+import navigation from './SidebarNav';
+import { BellIcon, MenuIcon, MenuAlt1Icon, ColorSwatchIcon } from '@heroicons/vue/outline';
+import useStore from 'store';
+import { onClickOutside } from '@vueuse/core';
+import env from 'core/env';
+import { checkIsMobile } from 'utils/index';
+import { Promotion } from '@element-plus/icons-vue';
 
 interface MenuItem {
-  title: string
-  icon: any
-  path: string
-  name: string
-  color: string
-  children: any
-  requiresAuth: boolean
+  title: string;
+  icon: any;
+  path: string;
+  name: string;
+  color: string;
+  children: any;
+  requiresAuth: boolean;
 }
 
 export default defineComponent({
@@ -210,54 +210,54 @@ export default defineComponent({
     MenuIcon,
     MenuAlt1Icon,
     ColorSwatchIcon,
-    Promotion,
+    Promotion
   },
   setup() {
-    const route = useRoute()
-    const store = useStore()
-    const menuItems = ref<MenuItem[]>(navigation)
-    const isPagesMenuOpen = ref(false)
-    const isSideMenuOpen = ref(false)
-    const target = ref(null)
-    const version = ref(env('VITE_APP_VERSION'))
-    const documentHref = ref(env('VITE_DOCUMENT_ENDPOINT'))
-    const isMobile = checkIsMobile()
-    const leftSideBarItems = ref<any[]>(['Dashboard', 'Profile', 'Map'])
+    const route = useRoute();
+    const store = useStore();
+    const menuItems = ref<MenuItem[]>(navigation);
+    const isPagesMenuOpen = ref(false);
+    const isSideMenuOpen = ref(false);
+    const target = ref(null);
+    const version = ref(env('VITE_APP_VERSION'));
+    const documentHref = ref(env('VITE_DOCUMENT_ENDPOINT'));
+    const isMobile = checkIsMobile();
+    const leftSideBarItems = ref<any[]>(['Dashboard', 'Profile', 'Map']);
 
     const handleOnResize = () => {
       if (window.innerWidth < 1024) {
-        store.dashboard.setIsSBOpen(false)
-        store.dashboard.setIsSBPin(false)
+        store.dashboard.setIsSBOpen(false);
+        store.dashboard.setIsSBPin(false);
       }
-    }
+    };
 
     onClickOutside(target, (_) => {
-      if (window.innerWidth < 1024) store.dashboard.setIsSBOpen(false)
-    })
+      if (window.innerWidth < 1024) store.dashboard.setIsSBOpen(false);
+    });
     onBeforeMount(() => {
       if (isMobile || window.innerWidth < 1024) {
-        store.dashboard.setIsSBOpen(false)
-        store.dashboard.setIsSBPin(false)
+        store.dashboard.setIsSBOpen(false);
+        store.dashboard.setIsSBPin(false);
       }
-    })
+    });
     onMounted(() => {
-      window.addEventListener('resize', handleOnResize)
-    })
+      window.addEventListener('resize', handleOnResize);
+    });
 
     onUnmounted(() => {
-      window.removeEventListener('resize', handleOnResize)
-    })
+      window.removeEventListener('resize', handleOnResize);
+    });
 
-    const isSBPin = computed<boolean>(() => store.dashboard.isSBPin)
-    const isSBOpen = computed<boolean>(() => store.dashboard.isSBOpen)
+    const isSBPin = computed<boolean>(() => store.dashboard.isSBPin);
+    const isSBOpen = computed<boolean>(() => store.dashboard.isSBOpen);
 
     const hoverLeftBar = (v: boolean) => {
-      if (!isMobile && window.innerWidth > 1023) store.dashboard.setIsSBOpen(v)
-    }
+      if (!isMobile && window.innerWidth > 1023) store.dashboard.setIsSBOpen(v);
+    };
 
     const handleMenuClick = () => {
-      store.dashboard.toggleMenu()
-    }
+      store.dashboard.toggleMenu();
+    };
 
     return {
       leftSideBarItems,
@@ -271,10 +271,10 @@ export default defineComponent({
       version,
       documentHref,
       hoverLeftBar,
-      handleMenuClick,
-    }
-  },
-})
+      handleMenuClick
+    };
+  }
+});
 </script>
 <style scoped>
 .hidden-aside {

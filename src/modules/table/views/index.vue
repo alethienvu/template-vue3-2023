@@ -23,51 +23,51 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
-import John_Snow_Url from '@/assets/images/John_Snow.png'
-import Team_2_Url from '@/assets/images/team-2.jpg'
-import Team_3_Url from '@/assets/images/team-3.jpg'
-import Team_4_Url from '@/assets/images/team-4.jpg'
-import Logo_Url from '@/assets/images/ltv_logo.png'
-import ProjectTable from './components/ProjectTable.vue'
+import John_Snow_Url from '@/assets/images/John_Snow.png';
+import Team_2_Url from '@/assets/images/team-2.jpg';
+import Team_3_Url from '@/assets/images/team-3.jpg';
+import Team_4_Url from '@/assets/images/team-4.jpg';
+import Logo_Url from '@/assets/images/ltv_logo.png';
+import ProjectTable from './components/ProjectTable.vue';
 
 interface User {
-  avatarPath: string
-  name: string
+  avatarPath: string;
+  name: string;
 }
 interface Project {
-  projectLogoPath: string
-  project: string
-  budget: string
-  status: string
-  users: User[]
-  completion: number
+  projectLogoPath: string;
+  project: string;
+  budget: string;
+  status: string;
+  users: User[];
+  completion: number;
 }
 export default defineComponent({
   name: 'Tables',
   components: {
-    ProjectTable,
+    ProjectTable
   },
   setup() {
     const usersData: User[] = [
       {
         avatarPath: John_Snow_Url,
-        name: 'Ryan Tompson',
+        name: 'Ryan Tompson'
       },
       {
         avatarPath: Team_2_Url,
-        name: 'Romina Hadid',
+        name: 'Romina Hadid'
       },
       {
         avatarPath: Team_3_Url,
-        name: 'Alexander Smith',
+        name: 'Alexander Smith'
       },
       {
         avatarPath: Team_4_Url,
-        name: 'Jessica Doe',
-      },
-    ]
+        name: 'Jessica Doe'
+      }
+    ];
     const tableData: Project[] = [
       {
         projectLogoPath: Logo_Url,
@@ -75,7 +75,7 @@ export default defineComponent({
         budget: '2500 ',
         status: 'pending',
         users: usersData,
-        completion: 60,
+        completion: 60
       },
       {
         projectLogoPath: Logo_Url,
@@ -83,7 +83,7 @@ export default defineComponent({
         budget: '4000 ',
         status: 'completed',
         users: usersData,
-        completion: 40,
+        completion: 40
       },
       {
         projectLogoPath: Logo_Url,
@@ -91,7 +91,7 @@ export default defineComponent({
         budget: '2500 ',
         status: 'delayed',
         users: usersData,
-        completion: 40,
+        completion: 40
       },
       {
         projectLogoPath: Logo_Url,
@@ -99,7 +99,7 @@ export default defineComponent({
         budget: '3300 ',
         status: 'on schedule',
         users: usersData,
-        completion: 10,
+        completion: 10
       },
       {
         projectLogoPath: Logo_Url,
@@ -107,13 +107,13 @@ export default defineComponent({
         budget: '3000 ',
         status: 'completed',
         users: usersData,
-        completion: 20,
-      },
-    ]
+        completion: 20
+      }
+    ];
 
     return {
-      tableData,
-    }
-  },
-})
+      tableData
+    };
+  }
+});
 </script>

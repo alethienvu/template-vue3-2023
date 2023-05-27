@@ -36,7 +36,7 @@
                   ? 'bg-danger'
                   : scope.row.status == 'pending'
                   ? 'bg-warning'
-                  : 'bg-success',
+                  : 'bg-success'
               ]"
             ></i>
             <span class="ml-2 pb-0.5 text-0.875 font-normal">{{ scope.row.status }}</span>
@@ -126,37 +126,37 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import { DotsVerticalIcon } from '@heroicons/vue/outline'
+import { defineComponent, ref } from 'vue';
+import { DotsVerticalIcon } from '@heroicons/vue/outline';
 
 export default defineComponent({
   name: 'ProjectTable',
   components: {
-    DotsVerticalIcon,
+    DotsVerticalIcon
   },
   props: {
     tableData: {
       type: Array,
-      required: true,
+      required: true
     },
     theme: {
       type: String,
       required: false,
-      default: 'light',
-    },
+      default: 'light'
+    }
   },
   setup() {
     const theme = ref([
       { status: 'on schedule', color: '#11CDEF' },
       { status: 'delayed', color: '#F5365C' },
-      { status: 'pending', color: '#FB6340' },
-    ])
+      { status: 'pending', color: '#FB6340' }
+    ]);
     const customColorMethod = (status: string) => {
-      return theme.value.find((el: any) => el.status == status)?.color ?? '#2DCE89'
-    }
+      return theme.value.find((el: any) => el.status == status)?.color ?? '#2DCE89';
+    };
     return {
-      customColorMethod,
-    }
-  },
-})
+      customColorMethod
+    };
+  }
+});
 </script>

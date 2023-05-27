@@ -280,22 +280,22 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
+import { ref, defineComponent } from 'vue';
 // Image
-import John_Snow_Url from '@/assets/images/John_Snow.png'
-import Tyrion_Lanister_Url from '@/assets/images/tyrion_lannister.jpg'
-import Tywin_Lanister_Url from '@/assets/images/tywin_lannister.jpg'
-import Window_Image_Url from '@/assets/images/window-purple-image.jpg'
-import Profile_Background_Image_Url from '@/assets/images/throne.jpg'
+import John_Snow_Url from '@/assets/images/John_Snow.png';
+import Tyrion_Lanister_Url from '@/assets/images/tyrion_lannister.jpg';
+import Tywin_Lanister_Url from '@/assets/images/tywin_lannister.jpg';
+import Window_Image_Url from '@/assets/images/window-purple-image.jpg';
+import Profile_Background_Image_Url from '@/assets/images/throne.jpg';
 // Components
-import AnalysisCard from './components/AnalysisCard.vue'
-import ListGroupCard from './components/ListGroupCard.vue'
-import ProfileCard from './components/ProfileCard.vue'
-import ContactCard from './components/ContactCard.vue'
-import TeamMemberCard from './components/TeamMemberCard.vue'
-import ImageFillCard from './components/ImageFillCard.vue'
-import QuoteCard from './components/QuoteCard.vue'
-import SimpleCard from './components/SimpleCard.vue'
+import AnalysisCard from './components/AnalysisCard.vue';
+import ListGroupCard from './components/ListGroupCard.vue';
+import ProfileCard from './components/ProfileCard.vue';
+import ContactCard from './components/ContactCard.vue';
+import TeamMemberCard from './components/TeamMemberCard.vue';
+import ImageFillCard from './components/ImageFillCard.vue';
+import QuoteCard from './components/QuoteCard.vue';
+import SimpleCard from './components/SimpleCard.vue';
 
 export default defineComponent({
   name: 'Card',
@@ -307,13 +307,13 @@ export default defineComponent({
     TeamMemberCard,
     ImageFillCard,
     QuoteCard,
-    SimpleCard,
+    SimpleCard
   },
   setup() {
-    const isHover = ref(false)
+    const isHover = ref(false);
     const hoverCheck = (b: boolean) => {
-      isHover.value = b
-    }
+      isHover.value = b;
+    };
     return {
       isHover,
       hoverCheck,
@@ -321,10 +321,10 @@ export default defineComponent({
       Tyrion_Lanister_Url,
       Tywin_Lanister_Url,
       Window_Image_Url,
-      Profile_Background_Image_Url,
-    }
-  },
-})
+      Profile_Background_Image_Url
+    };
+  }
+});
 </script>
 
 <style scoped>

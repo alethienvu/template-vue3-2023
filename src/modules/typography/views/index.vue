@@ -43,18 +43,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Heading from './components/Heading.vue'
-import DisplayTitle from './components/DisplayTitle.vue'
-import SpecializedTitle from './components/SpecializedTitle.vue'
-import Paragraphs from './components/Paragraphs.vue'
+import { defineComponent } from 'vue';
+import Heading from './components/Heading.vue';
+import DisplayTitle from './components/DisplayTitle.vue';
+import SpecializedTitle from './components/SpecializedTitle.vue';
+import Paragraphs from './components/Paragraphs.vue';
 
 export default defineComponent({
   components: {
     Heading,
     DisplayTitle,
     SpecializedTitle,
-    Paragraphs,
-  },
-})
+    Paragraphs
+  }
+});
 </script>

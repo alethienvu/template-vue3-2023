@@ -41,28 +41,25 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { Location } from '@element-plus/icons-vue'
+import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'TeamMemberCard',
-  components: {
-    Location,
-  },
+  components: {},
   props: {
     imgSrc: {
-      type: String,
+      type: String
     },
     name: {
       type: String,
-      default: '',
+      default: ''
     },
     description: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   setup() {
-    return {}
-  },
-})
+    return {};
+  }
+});
 </script>

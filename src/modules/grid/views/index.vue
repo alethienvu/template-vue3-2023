@@ -62,13 +62,13 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
-import GridSystem from './components/GridSystem.vue'
-import EqualWidth from './components/EqualWidth.vue'
-import OneColumnWidth from './components/OneColumnWidth.vue'
-import VariableWidth from './components/VariableWidth.vue'
-import MultiRow from './components/MultiRow.vue'
-import Mix from './components/Mix.vue'
+import { defineComponent } from 'vue';
+import GridSystem from './components/GridSystem.vue';
+import EqualWidth from './components/EqualWidth.vue';
+import OneColumnWidth from './components/OneColumnWidth.vue';
+import VariableWidth from './components/VariableWidth.vue';
+import MultiRow from './components/MultiRow.vue';
+import Mix from './components/Mix.vue';
 
 export default defineComponent({
   components: {
@@ -77,13 +77,13 @@ export default defineComponent({
     OneColumnWidth,
     VariableWidth,
     MultiRow,
-    Mix,
+    Mix
   },
   name: 'Grid',
   setup(_) {
-    return {}
-  },
-})
+    return {};
+  }
+});
 </script>
 
 <style scoped>

@@ -1,18 +1,18 @@
-import has from 'lodash/has'
-import trim from 'lodash/trim'
+import has from 'lodash/has';
+import trim from 'lodash/trim';
 
-const metaEnv: any = import.meta.env
+const metaEnv: any = import.meta.env;
 
-type EnvFunc = <T = unknown>(key: string, defaultValue?: T) => T
+type EnvFunc = <T = unknown>(key: string, defaultValue?: T) => T;
 type Utils = {
-  string: (key: string, defaultValue?: string) => string | undefined
-  int: (key: string, defaultValue?: number) => number | undefined
-  float: (key: string, defaultValue?: number) => number | undefined
-  bool: (key: string, defaultValue?: boolean) => boolean | undefined
-  json: <T = unknown>(key: string, defaultValue?: T) => T | undefined
-  array: (key: string, defaultValue?: string[]) => string[] | undefined
-  date: (key: string, defaultValue?: Date) => Date | undefined
-}
+  string: (key: string, defaultValue?: string) => string | undefined;
+  int: (key: string, defaultValue?: number) => number | undefined;
+  float: (key: string, defaultValue?: number) => number | undefined;
+  bool: (key: string, defaultValue?: boolean) => boolean | undefined;
+  json: <T = unknown>(key: string, defaultValue?: T) => T | undefined;
+  array: (key: string, defaultValue?: string[]) => string[] | undefined;
+  date: (key: string, defaultValue?: Date) => Date | undefined;
+};
 
 const utils: Utils = {
   /**
@@ -23,7 +23,7 @@ const utils: Utils = {
    * @returns string
    */
   string(key: string, defaultValue?: string): string | undefined {
-    return has(metaEnv, key) ? metaEnv[key] : defaultValue
+    return has(metaEnv, key) ? metaEnv[key] : defaultValue;
   },
 
   /**
@@ -35,11 +35,11 @@ const utils: Utils = {
    */
   int(key: string, defaultValue?: number): number | undefined {
     if (!has(metaEnv, key)) {
-      return defaultValue
+      return defaultValue;
     }
 
-    const value = metaEnv[key] || ''
-    return parseInt(value, 10)
+    const value = metaEnv[key] || '';
+    return parseInt(value, 10);
   },
 
   /**
@@ -51,11 +51,11 @@ const utils: Utils = {
    */
   float(key: string, defaultValue?: number): number | undefined {
     if (!has(metaEnv, key)) {
-      return defaultValue
+      return defaultValue;
     }
 
-    const value = metaEnv[key] || ''
-    return parseFloat(value)
+    const value = metaEnv[key] || '';
+    return parseFloat(value);
   },
 
   /**
@@ -67,11 +67,11 @@ const utils: Utils = {
    */
   bool(key: string, defaultValue?: boolean): boolean | undefined {
     if (!has(metaEnv, key)) {
-      return defaultValue
+      return defaultValue;
     }
 
-    const value = metaEnv[key]
-    return value === 'true'
+    const value = metaEnv[key];
+    return value === 'true';
   },
 
   /**
@@ -83,16 +83,14 @@ const utils: Utils = {
    */
   json<T = unknown>(key: string, defaultValue?: T): T | undefined {
     if (!has(metaEnv, key)) {
-      return defaultValue
+      return defaultValue;
     }
 
-    const value = metaEnv[key] || ''
+    const value = metaEnv[key] || '';
     try {
-      return JSON.parse(value)
+      return JSON.parse(value);
     } catch (error: any) {
-      throw new Error(
-        `Invalid json environment variable ${key}: ${error.message}`,
-      )
+      throw new Error(`Invalid json environment variable ${key}: ${error.message}`);
     }
   },
 
@@ -105,18 +103,18 @@ const utils: Utils = {
    */
   array(key: string, defaultValue?: string[]): string[] | undefined {
     if (!has(metaEnv, key)) {
-      return defaultValue
+      return defaultValue;
     }
 
-    let value = metaEnv[key] || ''
+    let value = metaEnv[key] || '';
 
     if (value.startsWith('[') && value.endsWith(']')) {
-      value = value.substring(1, value.length - 1)
+      value = value.substring(1, value.length - 1);
     }
 
     return value.split(',').map((v: string) => {
-      return trim(trim(v, ' '), '"')
-    })
+      return trim(trim(v, ' '), '"');
+    });
   },
 
   /**
@@ -128,13 +126,13 @@ const utils: Utils = {
    */
   date(key: string, defaultValue?: Date): Date | undefined {
     if (!has(metaEnv, key)) {
-      return defaultValue
+      return defaultValue;
     }
 
-    const value = metaEnv[key] || ''
-    return new Date(value)
-  },
-}
+    const value = metaEnv[key] || '';
+    return new Date(value);
+  }
+};
 
 /**
  * Get data from environment
@@ -145,7 +143,7 @@ const utils: Utils = {
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function env(key: string, defaultValue?: any) {
-  return has(metaEnv, key) ? metaEnv[key] : defaultValue
+  return has(metaEnv, key) ? metaEnv[key] : defaultValue;
 }
 
-export default Object.assign<EnvFunc, Utils>(env, utils)
+export default Object.assign<EnvFunc, Utils>(env, utils);

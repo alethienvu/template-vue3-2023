@@ -23,14 +23,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import useStore from 'store'
+import { defineComponent, computed } from 'vue';
+import useStore from 'store';
 
 export default defineComponent({
   setup() {
-    const store = useStore()
-    const loading = computed(() => store.global.loading)
-    return { loading }
-  },
-})
+    const store = useStore();
+    const loading = computed(() => store.global.loading);
+    return { loading };
+  }
+});
 </script>

@@ -23,28 +23,28 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref } from 'vue'
-import { BarChart } from 'vue-chart-3'
-import { Chart, registerables } from 'chart.js'
-Chart.register(...registerables)
+import { defineComponent, computed, ref } from 'vue';
+import { BarChart } from 'vue-chart-3';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 
 export default defineComponent({
   name: 'TotalBarChart',
   components: {
-    BarChart,
+    BarChart
   },
   props: {
     title: {
       type: String,
-      default: 'Performance',
+      default: 'Performance'
     },
     subcription: {
       type: String,
-      default: 'Total orders',
-    },
+      default: 'Total orders'
+    }
   },
   setup() {
-    const totalChart = ref()
+    const totalChart = ref();
     const totalData = computed(() => ({
       labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       datasets: [
@@ -56,27 +56,27 @@ export default defineComponent({
           borderColor: 'rgb(251 99 64)',
           borderRadius: Number.MAX_VALUE,
           borderSkipped: false,
-          barThickness: 10,
-        },
-      ],
-    }))
+          barThickness: 10
+        }
+      ]
+    }));
 
     const chartOptions = ref({
       elements: {
         bar: {
-          borderWidth: 2,
-        },
+          borderWidth: 2
+        }
       },
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          display: false,
-        },
+          display: false
+        }
       },
       interaction: {
         intersect: false,
-        mode: 'index',
+        mode: 'index'
       },
       scales: {
         y: {
@@ -86,7 +86,7 @@ export default defineComponent({
             drawOnChartArea: true,
             drawTicks: false,
             color: '#0000000d',
-            borderDash: [2, 2],
+            borderDash: [2, 2]
           },
           ticks: {
             display: true,
@@ -96,14 +96,14 @@ export default defineComponent({
               size: 12,
               family: 'Open Sans',
               style: 'normal',
-              lineHeight: 2,
+              lineHeight: 2
             },
             callback: function (value: number) {
               if (!(value % 10)) {
-                return value
+                return value;
               }
-            },
-          },
+            }
+          }
         },
         x: {
           grid: {
@@ -112,7 +112,7 @@ export default defineComponent({
             drawOnChartArea: false,
             drawTicks: false,
             zeroLineColor: 'transparent',
-            borderDash: [5, 5],
+            borderDash: [5, 5]
           },
           ticks: {
             display: true,
@@ -122,18 +122,18 @@ export default defineComponent({
               size: 12,
               family: 'Open Sans',
               style: 'normal',
-              lineHeight: 2,
-            },
-          },
-        },
-      },
-    })
+              lineHeight: 2
+            }
+          }
+        }
+      }
+    });
 
     return {
       totalChart,
       totalData,
-      chartOptions,
-    }
-  },
-})
+      chartOptions
+    };
+  }
+});
 </script>

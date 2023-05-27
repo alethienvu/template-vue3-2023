@@ -26,25 +26,25 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref, computed } from 'vue'
-import useStore from 'store'
-import { Close } from '@element-plus/icons-vue'
+import { defineComponent, ref, computed } from 'vue';
+import useStore from 'store';
+import { Close } from '@element-plus/icons-vue';
 export default defineComponent({
   name: 'SearchBar',
   components: {
-    Close,
+    Close
   },
   setup() {
-    const store = useStore()
-    const textInput = ref('')
-    const isSBPin = computed(() => store.dashboard.isSBPin)
+    const store = useStore();
+    const textInput = ref('');
+    const isSBPin = computed(() => store.dashboard.isSBPin);
 
     return {
       isSBPin,
-      textInput,
-    }
-  },
-})
+      textInput
+    };
+  }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -57,5 +57,4 @@ export default defineComponent({
     }
   }
 }
-
 </style>

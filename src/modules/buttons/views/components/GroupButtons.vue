@@ -29,11 +29,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'GroupButtons',
-})
+  name: 'GroupButtons'
+});
 </script>
 
 <style lang="scss" scoped>

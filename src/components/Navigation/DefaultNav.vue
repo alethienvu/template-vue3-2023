@@ -3,7 +3,7 @@
     class="flex items-center bg-default border mx-0 py-2 px-3.25 pl-2.75 md:px-7.25 shadow-sm h-18.5 md:h-19.75"
     :class="{
       'bg-indigo-410 border-indigo-410 border-b-slate-50/10': !route.meta.isDarkBackground,
-      'border-default border-b-cyan-30': route.meta.isDarkBackground,
+      'border-default border-b-cyan-30': route.meta.isDarkBackground
     }"
   >
     <div class="w-full items-center justify-between">
@@ -30,7 +30,7 @@
                 v-if="!isSBPin && isSearchOpen"
                 class="cursor-pointer w-4.5 h-4.5 text-slate-50 hover:text-slate-300"
                 :class="{
-                  'text-dark-lighter hover:text-indigo-410': route.meta.isDarkBackground,
+                  'text-dark-lighter hover:text-indigo-410': route.meta.isDarkBackground
                 }"
                 @click="setSearchOpen(false)"
               />
@@ -49,7 +49,7 @@
                   class="cursor-pointer w-4.5 h-4.5 indigo-410 text-slate-50 hover:text-slate-300"
                   :class="{
                     'text-slate-300': clickIconBell,
-                    'text-dark-lighter hover:text-indigo-410': route.meta.isDarkBackground,
+                    'text-dark-lighter hover:text-indigo-410': route.meta.isDarkBackground
                   }"
                 >
                   <BellFilled />
@@ -112,7 +112,7 @@
                   class="cursor-pointer w-4.5 h-4.5 text-slate-50 hover:text-slate-300"
                   :class="{
                     'text-slate-300': clickIconMenu,
-                    'text-dark-lighter hover:text-indigo-410': route.meta.isDarkBackground,
+                    'text-dark-lighter hover:text-indigo-410': route.meta.isDarkBackground
                   }"
                 >
                   <Menu />
@@ -298,26 +298,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed } from 'vue'
+import { defineComponent, ref, computed } from 'vue';
 import {
-  Search,
   BellFilled,
   Menu,
   LocationFilled,
   List,
   GoodsFilled,
   UserFilled,
-  CircleClose,
-} from '@element-plus/icons-vue'
-import { MenuIcon, MenuAlt1Icon, SearchIcon, SearchCircleIcon } from '@heroicons/vue/outline'
-import useStore from 'store'
-import { useRoute } from 'vue-router'
-import Logo_Url from '@/assets/images/ltv_logo.png'
-import John_Snow_Url from '@/assets/images/John_Snow.png'
+  CircleClose
+} from '@element-plus/icons-vue';
+import { MenuIcon, MenuAlt1Icon, SearchCircleIcon } from '@heroicons/vue/outline';
+import useStore from 'store';
+import { useRoute } from 'vue-router';
+import Logo_Url from '@/assets/images/ltv_logo.png';
+import John_Snow_Url from '@/assets/images/John_Snow.png';
 export default defineComponent({
   name: 'DefaultNav',
   components: {
-    Search,
     BellFilled,
     Menu,
     LocationFilled,
@@ -325,38 +323,37 @@ export default defineComponent({
     GoodsFilled,
     UserFilled,
     CircleClose,
-    SearchIcon,
     MenuIcon,
     MenuAlt1Icon,
-    SearchCircleIcon,
+    SearchCircleIcon
   },
   setup() {
-    const route: any = useRoute()
-    const store = useStore()
-    const isPagesMenuOpen = ref(false)
-    const isSideMenuOpen = ref(false)
-    const isSearchOpen = ref(true)
-    const clickIconBell = ref(false)
-    const clickIconMenu = ref(false)
+    const route: any = useRoute();
+    const store = useStore();
+    const isPagesMenuOpen = ref(false);
+    const isSideMenuOpen = ref(false);
+    const isSearchOpen = ref(true);
+    const clickIconBell = ref(false);
+    const clickIconMenu = ref(false);
     const togglePagesMenu = () => {
-      isSideMenuOpen.value = !isSideMenuOpen.value
-    }
+      isSideMenuOpen.value = !isSideMenuOpen.value;
+    };
     const closeSideMenu = () => {
-      isSideMenuOpen.value = false
-    }
+      isSideMenuOpen.value = false;
+    };
 
-    const isSBPin = computed(() => store.dashboard.isSBPin)
-    const isSBOpen = computed(() => store.dashboard.isSBOpen)
+    const isSBPin = computed(() => store.dashboard.isSBPin);
+    const isSBOpen = computed(() => store.dashboard.isSBOpen);
 
     const handleMenuClick = () => {
-      store.dashboard.toggleMenu()
-    }
+      store.dashboard.toggleMenu();
+    };
 
     const handleLogoutClick = () => {
-      store.auth.actLogout()
-    }
+      store.auth.actLogout();
+    };
 
-    const setSearchOpen = (v: boolean) => (isSearchOpen.value = v)
+    const setSearchOpen = (v: boolean) => (isSearchOpen.value = v);
 
     return {
       isPagesMenuOpen,
@@ -373,8 +370,8 @@ export default defineComponent({
       togglePagesMenu,
       closeSideMenu,
       Logo_Url,
-      John_Snow_Url,
-    }
-  },
-})
+      John_Snow_Url
+    };
+  }
+});
 </script>

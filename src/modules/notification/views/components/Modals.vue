@@ -32,42 +32,41 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, reactive } from 'vue'
-import LoginForm from 'modules/auth/views/components/LoginForm.vue'
-import DefaultModal from './DefaultModal.vue'
-import WarningModal from './WarningModal.vue'
+import { defineComponent, ref, reactive } from 'vue';
+import LoginForm from 'modules/auth/views/components/LoginForm.vue';
+import DefaultModal from './DefaultModal.vue';
+import WarningModal from './WarningModal.vue';
 
-import { MailIcon, LockClosedIcon, BellIcon } from '@heroicons/vue/solid'
+import { MailIcon, LockClosedIcon } from '@heroicons/vue/solid';
 
 export default defineComponent({
   name: 'Modals',
   components: {
-    BellIcon,
     LoginForm,
     DefaultModal,
-    WarningModal,
+    WarningModal
   },
   setup() {
     // Modals - Default
-    const openDefaultModal = ref(false)
+    const openDefaultModal = ref(false);
 
     // Modals - Notifications
-    const openWarningModal = ref(false)
+    const openWarningModal = ref(false);
 
     // Modals - Form
-    const dialogFormVisible = ref(false)
-    const formLabelWidth = '140px'
+    const dialogFormVisible = ref(false);
+    const formLabelWidth = '140px';
     const form = reactive({
       email: '',
       password: '',
       type: [],
       MailIcon: MailIcon,
-      LockClosedIcon: LockClosedIcon,
-    })
+      LockClosedIcon: LockClosedIcon
+    });
 
     const onSubmit = () => {
-      console.log(dialogFormVisible)
-    }
+      console.log(dialogFormVisible);
+    };
 
     return {
       openWarningModal,
@@ -75,8 +74,8 @@ export default defineComponent({
       formLabelWidth,
       form,
       onSubmit,
-      openDefaultModal,
-    }
-  },
-})
+      openDefaultModal
+    };
+  }
+});
 </script>

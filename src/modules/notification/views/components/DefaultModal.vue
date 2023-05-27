@@ -27,20 +27,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'DefaultModal',
   props: {
     triggerModal: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
-  computed:{
-    triggerDefault(){
-      return this.$props.triggerModal
+  computed: {
+    triggerDefault() {
+      return this.$props.triggerModal;
     }
   }
-})
+});
 </script>

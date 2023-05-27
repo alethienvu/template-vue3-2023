@@ -23,15 +23,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Alerts from './components/Alerts.vue'
-import Modals from './components/Modals.vue'
+import { defineComponent } from 'vue';
+import Alerts from './components/Alerts.vue';
+import Modals from './components/Modals.vue';
 
 export default defineComponent({
   name: 'Notification',
   components: {
     Alerts,
     Modals
-  },
-})
+  }
+});
 </script>

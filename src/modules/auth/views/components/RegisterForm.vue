@@ -19,16 +19,6 @@
           <small>Or sign up with credentials </small>
         </div>
         <el-form ref="form" :model="formData" class="authentication-form pb-6">
-          <el-form-item class="mb-6 rounded-md" prop="username">
-            <div
-              class="authentication-form-icon z-10 absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
-            >
-              <div class="w-5 h-5">
-                <AcademicCapIcon class="w-5 h-5 text-gray-210" />
-              </div>
-            </div>
-            <el-input placeholder="Name" v-model="formData.username" />
-          </el-form-item>
           <el-form-item class="mb-6 rounded-md" prop="email">
             <div
               class="authentication-form-icon z-10 absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none"
@@ -102,47 +92,45 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import { MailIcon, AcademicCapIcon, IdentificationIcon, LockOpenIcon } from '@heroicons/vue/solid'
+import { defineComponent, ref } from 'vue';
+import { MailIcon, IdentificationIcon, LockOpenIcon } from '@heroicons/vue/solid';
 
 export default defineComponent({
   name: 'RegisterForm',
   components: {
     MailIcon,
-    AcademicCapIcon,
     IdentificationIcon,
-    LockOpenIcon,
+    LockOpenIcon
   },
   setup() {
-    const form = ref<any>()
+    const form = ref<any>();
     const formData = ref({
-      username: '',
       email: '',
       usrType: '',
-      password: '',
-    })
+      password: ''
+    });
 
     const userType = [
       {
         id: 1,
-        nameType: 'Admin',
+        nameType: 'Admin'
       },
       {
         id: 2,
-        nameType: 'Creator',
+        nameType: 'Creator'
       },
       {
         id: 3,
-        nameType: 'Member',
-      },
-    ]
+        nameType: 'Member'
+      }
+    ];
     return {
       userType,
       form,
-      formData,
-    }
-  },
-})
+      formData
+    };
+  }
+});
 </script>
 
 <style lang="scss" scoped>

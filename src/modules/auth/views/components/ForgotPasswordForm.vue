@@ -23,21 +23,21 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import { MailIcon } from '@heroicons/vue/solid'
+import { defineComponent, ref } from 'vue';
+import { MailIcon } from '@heroicons/vue/solid';
 
 export default defineComponent({
   name: 'ForgotPasswordForm',
   components: {
-    MailIcon,
+    MailIcon
   },
   setup() {
-    const form = ref<any>()
-    const formData = ref({ email: '' })
+    const form = ref<any>();
+    const formData = ref({ email: '' });
     return {
       form,
-      formData,
-    }
-  },
-})
+      formData
+    };
+  }
+});
 </script>

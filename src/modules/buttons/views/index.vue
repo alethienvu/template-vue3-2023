@@ -57,13 +57,13 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
-import StyleButtons from './components/StyleButtons.vue'
-import ColorButtons from './components/ColorButtons.vue'
-import OutlineButtons from './components/OutlineButtons.vue'
-import SizeButtons from './components/SizeButtons.vue'
-import SocialButtons from './components/SocialButtons.vue'
-import GroupButtons from './components/GroupButtons.vue'
+import { defineComponent } from 'vue';
+import StyleButtons from './components/StyleButtons.vue';
+import ColorButtons from './components/ColorButtons.vue';
+import OutlineButtons from './components/OutlineButtons.vue';
+import SizeButtons from './components/SizeButtons.vue';
+import SocialButtons from './components/SocialButtons.vue';
+import GroupButtons from './components/GroupButtons.vue';
 
 export default defineComponent({
   components: {
@@ -72,7 +72,7 @@ export default defineComponent({
     OutlineButtons,
     SizeButtons,
     GroupButtons,
-    SocialButtons,
-  },
-})
+    SocialButtons
+  }
+});
 </script>

@@ -78,28 +78,28 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from 'vue'
+import { defineComponent, reactive } from 'vue';
 
 export default defineComponent({
   name: 'EditProfileForm',
   setup() {
     const userForm = reactive({
       name: '',
-      mail: '',
-    })
+      mail: ''
+    });
 
     const passForm = reactive({
       oldPass: '',
       newPass: '',
-      confirmPass: '',
-    })
+      confirmPass: ''
+    });
 
     return {
       userForm,
-      passForm,
-    }
-  },
-})
+      passForm
+    };
+  }
+});
 </script>
 
 <style lang="scss" scoped>

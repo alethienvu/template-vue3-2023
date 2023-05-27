@@ -20,14 +20,14 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { Shop, Tools } from '@element-plus/icons-vue'
+import { defineComponent } from 'vue';
+import { Shop, Tools } from '@element-plus/icons-vue';
 
 export default defineComponent({
   name: 'StyleButtons',
   components: {
     Shop,
-    Tools,
-  },
-})
+    Tools
+  }
+});
 </script>

@@ -51,19 +51,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { Shop } from '@element-plus/icons-vue'
-import { MenuIcon, XIcon } from '@heroicons/vue/outline'
+import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Footer',
-  components: {
-    Shop,
-    XIcon,
-    MenuIcon,
-  },
+  components: {},
   setup() {
-    return {}
-  },
-})
+    return {};
+  }
+});
 </script>

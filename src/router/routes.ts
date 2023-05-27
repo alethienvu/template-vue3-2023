@@ -8,28 +8,25 @@ import {
   BellIcon,
   UserIcon,
   ColorSwatchIcon
-} from '@heroicons/vue/outline'
+} from '@heroicons/vue/outline';
 
-import {
-  CreditCardIcon,
-} from '@heroicons/vue/solid'
-import Dashboard from 'modules/dashboard/views/index.vue'
+import { CreditCardIcon } from '@heroicons/vue/solid';
+import Dashboard from 'modules/dashboard/views/index.vue';
 // Lazy load
-const Login = () => import('modules/auth/views/login.vue')
-const Register = () => import('modules/auth/views/register.vue')
-const ForgotPassword = () => import('modules/auth/views/forgot-password.vue')
-const NotFound = () => import('modules/pages/views/404.vue')
-const Table = () => import('modules/table/views/index.vue')
-const Grid = () => import('modules/grid/views/index.vue')
-const Notification = () => import('modules/notification/views/index.vue')
-const Button = () => import('modules/buttons/views/index.vue')
-const Typography = () => import('modules/typography/views/index.vue')
-const Card = () => import('modules/cards/views/index.vue')
-const Icons = () => import('modules/icons/views/index.vue')
-const Profile = () => import('modules/profile/views/index.vue')
+const Login = () => import('modules/auth/views/login.vue');
+const Register = () => import('modules/auth/views/register.vue');
+const ForgotPassword = () => import('modules/auth/views/forgot-password.vue');
+const NotFound = () => import('modules/pages/views/404.vue');
+const Table = () => import('modules/table/views/index.vue');
+const Grid = () => import('modules/grid/views/index.vue');
+const Notification = () => import('modules/notification/views/index.vue');
+const Button = () => import('modules/buttons/views/index.vue');
+const Typography = () => import('modules/typography/views/index.vue');
+const Card = () => import('modules/cards/views/index.vue');
+const Icons = () => import('modules/icons/views/index.vue');
+const Profile = () => import('modules/profile/views/index.vue');
 
-const ComponentLayout = () => import('components/ComponentLayout/index.vue')
-
+const ComponentLayout = () => import('components/ComponentLayout/index.vue');
 
 const routes: any = [
   {
@@ -42,7 +39,7 @@ const routes: any = [
       color: 'text-indigo-410',
       requiresAuth: true,
       parentPath: 'Home'
-    },
+    }
   },
   {
     path: '/components/:componentItem?',
@@ -64,8 +61,8 @@ const routes: any = [
           title: 'Buttons',
           icon: CursorClickIcon,
           color: 'text-danger-50',
-          requiresAuth: true,
-        },
+          requiresAuth: true
+        }
       },
       {
         path: 'notifications',
@@ -75,8 +72,8 @@ const routes: any = [
           title: 'Notifications',
           icon: BellIcon,
           color: 'text-success-50',
-          requiresAuth: true,
-        },
+          requiresAuth: true
+        }
       },
       {
         path: 'tables',
@@ -86,8 +83,8 @@ const routes: any = [
           title: 'Tables',
           icon: ViewBoardsIcon,
           color: 'text-indigo-410',
-          requiresAuth: true,
-        },
+          requiresAuth: true
+        }
       },
       {
         path: 'grid',
@@ -97,8 +94,8 @@ const routes: any = [
           title: 'Grid',
           icon: ViewGridIcon,
           color: 'text-info',
-          requiresAuth: true,
-        },
+          requiresAuth: true
+        }
       },
       {
         path: 'typography',
@@ -108,8 +105,8 @@ const routes: any = [
           title: 'Typography',
           icon: DocumentTextIcon,
           color: 'text-yellow-310',
-          requiresAuth: true,
-        },
+          requiresAuth: true
+        }
       },
       {
         path: 'cards',
@@ -119,8 +116,8 @@ const routes: any = [
           title: 'Cards',
           icon: CreditCardIcon,
           color: 'text-warning-50',
-          requiresAuth: true,
-        },
+          requiresAuth: true
+        }
       },
       {
         path: 'icons',
@@ -130,12 +127,12 @@ const routes: any = [
           title: 'Icons',
           icon: StarIcon,
           color: 'text-red-410',
-          requiresAuth: true,
-        },
-      },
+          requiresAuth: true
+        }
+      }
     ]
   },
-  
+
   {
     path: '/profile',
     component: Profile,
@@ -148,41 +145,40 @@ const routes: any = [
       isFullWidthLayout: true,
       requiresAuth: true,
       parentPath: 'Home'
-    },
+    }
   },
   {
     path: '/register',
     component: Register,
     name: 'register',
     meta: {
-      requiresAuth: false,
-    },
+      requiresAuth: false
+    }
   },
   {
     path: '/forgot-password',
     component: ForgotPassword,
     name: 'forgot-password',
     meta: {
-      requiresAuth: false,
-    },
+      requiresAuth: false
+    }
   },
   {
-    
     path: '/login',
     component: Login,
     name: 'login',
     meta: {
-      requiresAuth: false,
-    },
+      requiresAuth: false
+    }
   },
   {
     path: '/:pathMatch(.*)*',
     component: NotFound,
     name: 'NotFound',
     meta: {
-      requiresAuth: false,
-    },
-  },
-]
+      requiresAuth: false
+    }
+  }
+];
 
-export default routes
+export default routes;

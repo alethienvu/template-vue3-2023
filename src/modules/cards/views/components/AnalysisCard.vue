@@ -114,16 +114,16 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { ArrowUpIcon } from '@heroicons/vue/solid'
+import { defineComponent } from 'vue';
+import { ArrowUpIcon } from '@heroicons/vue/solid';
 
 export default defineComponent({
   name: 'AnalysisCard',
   components: {
-    ArrowUpIcon,
+    ArrowUpIcon
   },
   setup() {
-    return {}
-  },
-})
+    return {};
+  }
+});
 </script>

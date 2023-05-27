@@ -57,59 +57,59 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'SocialTrafficTable',
   props: {
     title: {
       type: String,
-      default: 'Social traffic',
-    },
+      default: 'Social traffic'
+    }
   },
   setup() {
     const tableData: any[] = [
       {
         referral: 'Facebook',
         visitorNumber: '1,480',
-        completion: 60,
+        completion: 60
       },
       {
         referral: 'Facebook',
         visitorNumber: '5,480',
-        completion: 70,
+        completion: 70
       },
       {
         referral: 'Google',
         visitorNumber: '4,807',
-        completion: 80,
+        completion: 80
       },
       {
         referral: 'Instagram',
         visitorNumber: '3,678',
-        completion: 75,
+        completion: 75
       },
       {
         referral: 'Twitter',
         visitorNumber: '2,645',
-        completion: 30,
-      },
-    ]
+        completion: 30
+      }
+    ];
     const theme = ref([
       { completion: 60, color: '#F5365C' },
       { completion: 70, color: '#2DCE89' },
       { completion: 75, color: '#11CDEF' },
-      { completion: 80, color: '#6c6be4' },
-    ])
+      { completion: 80, color: '#6c6be4' }
+    ]);
 
     const customColorMethod = (completion: number) => {
-      return theme.value.find((el: any) => el.completion == completion)?.color ?? '#FB6340'
-    }
+      return theme.value.find((el: any) => el.completion == completion)?.color ?? '#FB6340';
+    };
 
     return {
       tableData,
-      customColorMethod,
-    }
-  },
-})
+      customColorMethod
+    };
+  }
+});
 </script>

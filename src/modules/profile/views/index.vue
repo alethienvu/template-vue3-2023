@@ -70,18 +70,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
 // Components
-import PrimaryIndicator from './components/PrimaryIndicator.vue'
-import WarningIndicator from './components/WarningIndicator.vue'
-import EditProfileForm from './components/EditProfileForm.vue'
-import ProgressTrack from './components/ProgressTrack.vue'
-import ProfileCard from '../../cards/views/components/ProfileCard.vue'
+import PrimaryIndicator from './components/PrimaryIndicator.vue';
+import WarningIndicator from './components/WarningIndicator.vue';
+import EditProfileForm from './components/EditProfileForm.vue';
+import ProgressTrack from './components/ProgressTrack.vue';
+import ProfileCard from '../../cards/views/components/ProfileCard.vue';
 
-import backGround from '@/assets/images/profile-cover.jpg'
-import avatarUrl from '@/assets/images/team-3.jpg'
-import avatarBackgroundUrl from '@/assets/images/window-purple-image.jpg'
+import backGround from '@/assets/images/profile-cover.jpg';
+import avatarUrl from '@/assets/images/team-3.jpg';
+import avatarBackgroundUrl from '@/assets/images/window-purple-image.jpg';
 
 export default defineComponent({
   name: 'Profile',
@@ -90,16 +90,16 @@ export default defineComponent({
     WarningIndicator,
     EditProfileForm,
     ProgressTrack,
-    ProfileCard,
+    ProfileCard
   },
   setup(_) {
     return {
       backGround,
       avatarUrl,
-      avatarBackgroundUrl,
-    }
-  },
-})
+      avatarBackgroundUrl
+    };
+  }
+});
 </script>
 
 <style lang="scss" scoped>

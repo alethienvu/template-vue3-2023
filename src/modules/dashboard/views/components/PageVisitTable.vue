@@ -66,26 +66,26 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { ArrowNarrowDownIcon, ArrowNarrowUpIcon } from '@heroicons/vue/outline'
+import { defineComponent } from 'vue';
+import { ArrowNarrowDownIcon, ArrowNarrowUpIcon } from '@heroicons/vue/outline';
 
 interface PageVisitInfo {
-  pageName: string
-  visitorNumber: string
-  userNumber: number
-  rate: number
+  pageName: string;
+  visitorNumber: string;
+  userNumber: number;
+  rate: number;
 }
 export default defineComponent({
   name: 'PageVisitTable',
   components: {
     ArrowNarrowDownIcon,
-    ArrowNarrowUpIcon,
+    ArrowNarrowUpIcon
   },
   props: {
     title: {
       type: String,
-      default: 'Page visits',
-    },
+      default: 'Page visits'
+    }
   },
   setup() {
     const tableData: PageVisitInfo[] = [
@@ -93,37 +93,37 @@ export default defineComponent({
         pageName: '/argon/',
         visitorNumber: '4,569',
         userNumber: 340,
-        rate: 46.53,
+        rate: 46.53
       },
       {
         pageName: '/argon/index.html',
         visitorNumber: '3,985',
         userNumber: 319,
-        rate: 46.53,
+        rate: 46.53
       },
       {
         pageName: '/argon/charts.html',
         visitorNumber: '3,513	',
         userNumber: 294,
-        rate: 36.49,
+        rate: 36.49
       },
       {
         pageName: '/argon/tables.html',
         visitorNumber: '2,000',
         userNumber: 147,
-        rate: 50.87,
+        rate: 50.87
       },
       {
         pageName: '/argon/profile.html',
         visitorNumber: '1,795',
         userNumber: 190,
-        rate: 42.53,
-      },
-    ]
+        rate: 42.53
+      }
+    ];
 
     return {
-      tableData,
-    }
-  },
-})
+      tableData
+    };
+  }
+});
 </script>

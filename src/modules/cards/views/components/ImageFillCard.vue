@@ -20,21 +20,21 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'ImageFillCard',
   props: {
     imgSrc: {
-      type: String,
+      type: String
     },
     title: {
       type: String,
-      default: 'Card title',
+      default: 'Card title'
     },
     updateTime: {
       type: Number,
-      default: 0,
-    },
-  },
-})
+      default: 0
+    }
+  }
+});
 </script>

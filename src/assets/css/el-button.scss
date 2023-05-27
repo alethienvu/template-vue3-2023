@@ -25,7 +25,7 @@ body {
   }
 
   .el-button.el-button--default.is-plain {
-    @apply transition-all duration-150 ;
+    @apply transition-all duration-150;
     &::before {
       @apply opacity-0;
     }

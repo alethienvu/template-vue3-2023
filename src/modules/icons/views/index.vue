@@ -26,20 +26,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import * as Icons from '@heroicons/vue/solid'
+import { defineComponent } from 'vue';
+import * as Icons from '@heroicons/vue/solid';
 export default defineComponent({
   setup() {
     const icons = Object.keys(Icons).map((value: string) => ({
       name: value,
-      icon: Icons[value as keyof typeof Icons],
-    }))
+      icon: Icons[value as keyof typeof Icons]
+    }));
 
     return {
-      icons,
-    }
-  },
-})
+      icons
+    };
+  }
+});
 </script>
 
 <style lang="scss" scoped>

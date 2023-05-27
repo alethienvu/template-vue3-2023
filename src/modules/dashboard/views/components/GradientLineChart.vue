@@ -43,29 +43,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref } from 'vue'
-import { LineChart } from 'vue-chart-3'
-import { Chart, registerables } from 'chart.js'
-Chart.register(...registerables)
+import { defineComponent, computed, ref } from 'vue';
+import { LineChart } from 'vue-chart-3';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 
 export default defineComponent({
   name: 'GradientLineChart',
   components: {
-    LineChart,
+    LineChart
   },
   props: {
     title: {
       type: String,
-      default: 'Overview',
+      default: 'Overview'
     },
     subcription: {
       type: String,
-      default: 'Sales value',
-    },
+      default: 'Sales value'
+    }
   },
   setup() {
-    const data = ref([0, 20, 10, 30, 15, 40, 20, 60])
-    const salesChart = ref()
+    const data = ref([0, 20, 10, 30, 15, 40, 20, 60]);
+    const salesChart = ref();
     const salesData = computed(() => ({
       labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       datasets: [
@@ -77,10 +77,10 @@ export default defineComponent({
           backgroundColor: 'rgba(23, 43, 77, 0.01)',
           borderWidth: 4,
           fill: true,
-          data: data.value,
-        },
-      ],
-    }))
+          data: data.value
+        }
+      ]
+    }));
 
     const chartOptions = ref({
       scales: {
@@ -91,7 +91,7 @@ export default defineComponent({
             drawOnChartArea: false,
             drawTicks: false,
             zeroLineColor: 'transparent',
-            borderDash: [5, 5],
+            borderDash: [5, 5]
           },
           ticks: {
             display: true,
@@ -101,9 +101,9 @@ export default defineComponent({
               size: 12,
               family: 'Open Sans',
               style: 'normal',
-              lineHeight: 2,
-            },
-          },
+              lineHeight: 2
+            }
+          }
         },
         y: {
           grid: {
@@ -112,7 +112,7 @@ export default defineComponent({
             drawOnChartArea: true,
             drawTicks: false,
             color: 'rgba(30, 35, 53, 1)',
-            borderDash: [2, 2],
+            borderDash: [2, 2]
           },
           ticks: {
             display: true,
@@ -122,50 +122,50 @@ export default defineComponent({
               size: 12,
               family: 'Open Sans',
               style: 'normal',
-              lineHeight: 2,
+              lineHeight: 2
             },
             callback: function (value: number) {
               if (!(value % 10)) {
-                return `$${value}k`
+                return `$${value}k`;
               }
-            },
-          },
-        },
+            }
+          }
+        }
       },
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
         legend: {
-          display: false,
+          display: false
         },
         tooltip: {
           callbacks: {
             label: function (context: any) {
-              let label = context.dataset.label || ''
+              let label = context.dataset.label || '';
               if (label) {
-                label += `: $${context.parsed.y}k`
+                label += `: $${context.parsed.y}k`;
               }
-              return label
-            },
-          },
-        },
+              return label;
+            }
+          }
+        }
       },
       interaction: {
         intersect: false,
-        mode: 'index',
-      },
-    })
+        mode: 'index'
+      }
+    });
 
     const changeDataChart = (value: any) => {
-      data.value = value
-    }
+      data.value = value;
+    };
 
     return {
       changeDataChart,
       salesChart,
       salesData,
-      chartOptions,
-    }
-  },
-})
+      chartOptions
+    };
+  }
+});
 </script>

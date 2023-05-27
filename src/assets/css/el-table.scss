@@ -26,7 +26,6 @@
   @apply bg-dark-light font-semibold px-4 py-2 whitespace-nowrap text-0.65 text-[#4d7bca] #{!important};
 }
 
-
 // Dark table style
 .is-dark .el-table__body-wrapper tr td:first-child {
   @apply pl-4 #{!important};
@@ -54,8 +53,6 @@
 .is-dark.el-table th {
   @apply border-solid border-[#274a84] #{!important};
 }
-
-
 
 .is-dark .el-table__body tr > td {
   @apply bg-dark text-white #{!important};

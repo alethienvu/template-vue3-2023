@@ -77,62 +77,62 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import { Location } from '@element-plus/icons-vue'
+import { defineComponent, ref } from 'vue';
+import { Location } from '@element-plus/icons-vue';
 export default defineComponent({
   name: 'ProfileCard',
   components: {
-    Location,
+    Location
   },
   props: {
     avatarImg: {
-      type: String,
+      type: String
     },
     backgroundImg: {
-      type: String,
+      type: String
     },
     friends: {
       type: Number,
-      default: 0,
+      default: 0
     },
     photos: {
       type: Number,
-      default: 0,
+      default: 0
     },
     comments: {
       type: Number,
-      default: 0,
+      default: 0
     },
     name: {
       type: String,
-      default: '',
+      default: ''
     },
     age: {
       type: Number,
-      default: '',
+      default: 0
     },
     location: {
       type: String,
-      default: '',
+      default: ''
     },
     job: {
       type: String,
-      default: '',
+      default: ''
     },
     degree: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   setup() {
-    const isHover = ref(false)
+    const isHover = ref(false);
     const hoverCheck = (b: boolean) => {
-      isHover.value = b
-    }
+      isHover.value = b;
+    };
     return {
       isHover,
-      hoverCheck,
-    }
-  },
-})
+      hoverCheck
+    };
+  }
+});
 </script>

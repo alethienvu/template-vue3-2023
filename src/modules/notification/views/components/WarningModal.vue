@@ -27,25 +27,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { BellIcon } from '@heroicons/vue/solid'
+import { defineComponent } from 'vue';
+import { BellIcon } from '@heroicons/vue/solid';
 
 export default defineComponent({
   name: 'WarningModal',
   components: {
-    BellIcon,
+    BellIcon
   },
   emits: ['closeWarningModal'],
   props: {
     triggerWarningModal: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
-  computed:{
-    triggerWarning(){
-      return this.$props.triggerWarningModal
+  computed: {
+    triggerWarning() {
+      return this.$props.triggerWarningModal;
     }
   }
-})
+});
 </script>

@@ -1,5 +1,5 @@
-import { defineStore } from 'pinia'
-import { type DashboardState } from './types'
+import { defineStore } from 'pinia';
+import { type DashboardState } from './types';
 
 export const useState = defineStore({
   id: 'dashboard.state',
@@ -7,7 +7,7 @@ export const useState = defineStore({
     return {
       welcomeText: 'Welcome to Dashboard! ...',
       isSBPin: true,
-      isSBOpen: true,
-    }
-  },
-})
+      isSBOpen: true
+    };
+  }
+});

@@ -17,21 +17,21 @@ body {
   .el-tag.el-tag--dark.el-tag--success {
     @apply bg-success border-success text-white;
     .el-icon:hover {
-      @apply text-success ;
+      @apply text-success;
     }
   }
 
   .el-tag.el-tag--dark.el-tag--info {
     @apply bg-info border-info text-white;
     .el-icon:hover {
-      @apply text-info ;
+      @apply text-info;
     }
   }
 
   .el-tag.el-tag--dark.el-tag--danger {
     @apply bg-danger border-danger text-white;
     .el-icon:hover {
-      @apply text-danger ;
+      @apply text-danger;
     }
   }
 
@@ -104,7 +104,7 @@ body {
   }
 
   .el-tag.el-tag--plain.el-tag--warning {
-    @apply text-warning border-warning ;
+    @apply text-warning border-warning;
     .el-icon {
       @apply text-warning;
     }
@@ -115,7 +115,7 @@ body {
   }
 
   .el-tag.el-tag--plain.el-tag--success {
-    @apply text-success border-success ;
+    @apply text-success border-success;
     .el-icon {
       @apply text-success;
     }
@@ -126,7 +126,7 @@ body {
   }
 
   .el-tag.el-tag--plain.el-tag--info {
-    @apply text-info border-info ;
+    @apply text-info border-info;
     .el-icon {
       @apply text-info;
     }
@@ -137,7 +137,7 @@ body {
   }
 
   .el-tag.el-tag--plain.el-tag--danger {
-    @apply text-danger border-danger ;
+    @apply text-danger border-danger;
     .el-icon {
       @apply text-danger;
     }

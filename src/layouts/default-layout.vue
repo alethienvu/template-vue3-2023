@@ -64,10 +64,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import useStore from 'store'
-import { HomeFilled } from '@element-plus/icons-vue'
-import { useRoute } from 'vue-router'
+import { defineComponent, computed } from 'vue';
+import useStore from 'store';
+import { HomeFilled } from '@element-plus/icons-vue';
+import { useRoute } from 'vue-router';
 const svg = `
         <path class="path" d="
           M 30 15
@@ -77,7 +77,7 @@ const svg = `
           A 15 15, 0, 1, 1, 27.99 7.5
           L 15 15
         " style="stroke-width: 4px; fill: rgba(0, 0, 0, 0)"/>
-      `
+      `;
 export default defineComponent({
   name: 'Layout',
   components: {
@@ -85,12 +85,12 @@ export default defineComponent({
   },
 
   setup() {
-    const route: any = useRoute()
-    const store = useStore()
-    const isSBPin = computed<boolean>(() => store.dashboard.isSBPin)
-    const loading = computed(() => store.global.loading)
+    const route: any = useRoute();
+    const store = useStore();
+    const isSBPin = computed<boolean>(() => store.dashboard.isSBPin);
+    const loading = computed(() => store.global.loading);
 
-    const setIsSBPin = (b: boolean) => store.dashboard.setIsSBPin(b)
+    const setIsSBPin = (b: boolean) => store.dashboard.setIsSBPin(b);
     return {
       isSBPin,
       loading,
@@ -98,17 +98,17 @@ export default defineComponent({
       route,
       store,
       svg
-    }
+    };
   },
   beforeMount() {
-    const store = useStore()
-    store.global.actLoading(true)
+    const store = useStore();
+    store.global.actLoading(true);
   },
   mounted() {
-    const store = useStore()
-    store.global.actLoading(false)
+    const store = useStore();
+    store.global.actLoading(false);
   }
-})
+});
 </script>
 
 <style scoped>

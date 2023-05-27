@@ -19,23 +19,23 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { MinusIcon } from '@heroicons/vue/solid'
+import { defineComponent } from 'vue';
+import { MinusIcon } from '@heroicons/vue/solid';
 
 export default defineComponent({
   name: 'ImageFillCard',
   props: {
     title: {
       type: String,
-      default: 'Testimonial',
+      default: 'Testimonial'
     },
     source: {
       type: String,
-      default: 'Source Title',
-    },
+      default: 'Source Title'
+    }
   },
   components: {
-    MinusIcon,
-  },
-})
+    MinusIcon
+  }
+});
 </script>

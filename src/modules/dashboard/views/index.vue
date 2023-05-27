@@ -29,15 +29,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent } from 'vue';
 
-import AnalysisCard from 'modules/cards/views/components/AnalysisCard.vue'
+import AnalysisCard from 'modules/cards/views/components/AnalysisCard.vue';
 // Chart
-import GradientLineChart from './components/GradientLineChart.vue'
-import TotalBarChart from './components/TotalBarChart.vue'
+import GradientLineChart from './components/GradientLineChart.vue';
+import TotalBarChart from './components/TotalBarChart.vue';
 // Table
-import SocialTrafficTable from './components/SocialTrafficTable.vue'
-import PageVisitTable from './components/PageVisitTable.vue'
+import SocialTrafficTable from './components/SocialTrafficTable.vue';
+import PageVisitTable from './components/PageVisitTable.vue';
 
 export default defineComponent({
   name: 'DashBoard',
@@ -46,10 +46,10 @@ export default defineComponent({
     GradientLineChart,
     TotalBarChart,
     PageVisitTable,
-    SocialTrafficTable,
+    SocialTrafficTable
   },
   setup() {
-    return {}
-  },
-})
+    return {};
+  }
+});
 </script>

@@ -47,61 +47,66 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import useStore from 'store'
-import { MailIcon, LockOpenIcon } from '@heroicons/vue/solid'
-
+import { defineComponent, ref } from 'vue';
+import useStore from 'store';
+import { MailIcon, LockOpenIcon } from '@heroicons/vue/solid';
+import { ElNotification } from 'element-plus';
 export default defineComponent({
   name: 'LoginForm',
   components: {
     MailIcon,
-    LockOpenIcon,
+    LockOpenIcon
   },
   props: {
     height: {
-      type: Number,
+      type: Number
     },
     description: {
       type: String,
-      default: '',
+      default: ''
     },
     email: {
       type: String,
-      default: '',
+      default: ''
     },
     password: {
       type: String,
-      default: '',
-    },
+      default: ''
+    }
   },
   setup(props) {
-    const store = useStore()
-    const form = ref<any>()
-    const formData = ref({ email: props.email, password: props.password })
+    const store = useStore();
+    const form = ref<any>();
+    const formData = ref({ email: props.email, password: props.password });
 
     const handleKeyDown = async () => {
-      login()
-    }
+      login();
+    };
 
     const handleLoginClick = async () => {
-      login()
-    }
+      login();
+      ElNotification({
+        title: 'Success',
+        message: 'This is a success message',
+        type: 'success'
+      });
+    };
 
     const login = async () => {
       try {
         if (!store.auth.isAuthenticated) {
-          store.auth.actLogin(formData.value)
+          store.auth.actLogin(formData.value);
         }
       } catch (e) {
-        console.log('err::: ', e)
+        console.log('err::: ', e);
       }
-    }
+    };
     return {
       form,
       formData,
       handleLoginClick,
-      handleKeyDown,
-    }
-  },
-})
+      handleKeyDown
+    };
+  }
+});
 </script>
